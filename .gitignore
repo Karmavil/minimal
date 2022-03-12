@@ -1,0 +1,7 @@
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+.godot
+build
+godot_project/bin
+!godot_project/bin/minimal.gdextension

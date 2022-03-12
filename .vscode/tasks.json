@@ -1,0 +1,58 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build GodotC++",
+      "group": "build",
+      "type": "shell",
+      "command": "scons -j$(nproc)",
+      "problemMatcher": "$msCompile",
+      "options": {
+          "cwd": "godot-cpp",
+          "env": {
+              "PATH": "${env:PATH}:/var/data/python/bin"
+          }
+      }
+    },
+    {
+      "label": "Create build dir",
+      "group": "build",
+      "type": "shell",
+      "command": "mkdir -p build",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Build THIS",
+      "group": "build",
+      "type": "shell",
+      "command": "cmake .. && make",
+      "options": {
+        "cwd": "build"
+      },
+      "dependsOn": "Create build dir",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Format",
+      "group": "none",
+      "type": "shell",
+      "command": ["clang-format"],
+      "args": ["-i", "--verbose", "include/*.hpp", "src/*.cpp"],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+            "PATH": "${env:PATH}:/var/data/python/bin"
+        }
+      },
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Launch",
+      "group": "test",
+      "type": "shell",
+      "command": "~/Projects/godot-alpha/bin/godot.linuxbsd.tools.64", // Change this to wherever your Godot executable is.
+      "problemMatcher": "$msCompile"
+    }
+
+  ]
+}

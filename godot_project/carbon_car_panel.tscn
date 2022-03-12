@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c76tn61ko1qes"]
+
+[ext_resource type="PackedScene" uid="uid://ddru3jp8vycca" path="res://base_panel.tscn" id="1_43pax"]
+[ext_resource type="Texture2D" uid="uid://br3f88te0kems" path="res://assets/carbon.jpg" id="2_6j55m"]
+
+[node name="CarbonCarPanel" instance=ExtResource( "1_43pax" )]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource( "2_6j55m" )
