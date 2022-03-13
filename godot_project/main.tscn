@@ -2,5 +2,8 @@
 
 [node name="Main" type="Node"]
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Bug" type="Bug" parent="."]
+
+[node name="Timer" type="Timer" parent="Bug"]
+wait_time = 2.0
 autostart = true

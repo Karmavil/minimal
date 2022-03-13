@@ -1,0 +1,7 @@
+[configuration]
+
+entry_symbol = "minimal_library_init"
+
+[libraries]
+
+linux.64 = "Linux/x86_64/libminimal.so"

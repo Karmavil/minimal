@@ -2,7 +2,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Build GodotC++",
+      "label": "Build GodotCPP",
       "group": "build",
       "type": "shell",
       "command": "scons -j$(nproc)",

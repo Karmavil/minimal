@@ -5,7 +5,7 @@
             "name": "(gdb) Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "~/Projects/godot-alpha/bin/godot.linuxbsd.tools.64", // Change this path for the path to your Godot executable
+            "program": "/home/karma/Projects/godot-alpha/bin/godot.linuxbsd.tools.64", // Change this path for the path to your Godot executable
             "args": ["${workspaceFolder}/godot_project/project.godot"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

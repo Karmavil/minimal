@@ -14,7 +14,7 @@ set(LIBRARY_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/godot_project/bin/${SYSTEM}/${ARQUI
 
 include_directories(include)
 
-# Add project executable
+# Add project library
 add_library(${CMAKE_PROJECT_NAME} SHARED src/_extension.cpp src/bug.cpp src/red_car_panel.cpp src/carbon_car_panel.cpp)
 
 
@@ -22,6 +22,9 @@ add_library(${CMAKE_PROJECT_NAME} SHARED src/_extension.cpp src/bug.cpp src/red_
 include_directories(
     godot-cpp/godot-headers
     godot-cpp/include/godot_cpp/core
+    godot-cpp/include/godot_cpp/classes
+    godot-cpp/include/godot_cpp/templates
+    godot-cpp/include/godot_cpp/variant
     godot-cpp/include
     godot-cpp/gen/include
     godot-cpp/gen/include/godot_cpp/classes
@@ -39,4 +42,5 @@ else()
     message(STATUS "godot-cpp library found")
 endif()
 
+# Link godot-cpp library and the project library
 target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC ${GODOT_CPP})
