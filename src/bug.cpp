@@ -17,6 +17,8 @@ void minimal::Bug::_ready()
         {
             _timer = get_node<godot::Timer>("Timer");
             _timer->set_wait_time(2);
+            // setTimerNode(get_node<godot::Timer>("Timer"));
+            // getTimerNode()->set_wait_time(2);
             godot::ClassDB::bind_method(godot::D_METHOD("timeout"), &minimal::Bug::nextSlide);
         }
     }
@@ -27,7 +29,19 @@ void minimal::Bug::nextSlide()
     godot::UtilityFunctions::print("Next slide");
 }
 
+godot::Timer *minimal::Bug::getTimerNode()
+{
+    return _timer;
+}
+
+void minimal::Bug::setTimerNode(godot::Timer *timer)
+{
+    _timer = timer;
+}
+
 void minimal::Bug::_bind_methods()
 {
-    godot::ClassDB::bind_method(godot::D_METHOD("nextSlide"), &minimal::Bug::nextSlide);
+    using namespace godot;
+    ClassDB::bind_method(D_METHOD("nextSlide"), &minimal::Bug::nextSlide);
+    ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "_timer"), "setTimerNode", "getTimerNode");
 }
