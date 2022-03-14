@@ -11,17 +11,11 @@ minimal::Bug::~Bug()
 
 void minimal::Bug::_ready()
 {
-    if (get_child_count()) // When you add the node in the Editor this code will be executed
-    {
-        if (get_node_or_null("Timer")) // And because it has no childs yet, getting a child node will thrown an error.
-        {
-            _timer = get_node<godot::Timer>("Timer");
-            _timer->set_wait_time(2);
-            int error = _timer->connect("timeout", godot::Callable(this, "nextSlide"));
-            if (error)
-                godot::UtilityFunctions::print(error);
-        }
-    }
+    _timer = get_node<godot::Timer>("Timer");
+    _timer->set_wait_time(2);
+    int error = _timer->connect("timeout", godot::Callable(this, "nextSlide"));
+    if (error)
+        godot::UtilityFunctions::print(error);
 }
 
 void minimal::Bug::nextSlide()

@@ -7,3 +7,5 @@
 [node name="Timer" type="Timer" parent="Bug"]
 wait_time = 2.0
 autostart = true
+
+[node name="Bug2" type="Bug" parent="."]
