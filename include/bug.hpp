@@ -27,9 +27,6 @@ namespace minimal
         ~Bug();
         void nextSlide();
         virtual void _ready() override;
-
-        godot::Timer *getTimerNode();
-        void setTimerNode(godot::Timer *);
     };
 
 } // namespace minimal
